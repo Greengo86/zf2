@@ -20,6 +20,20 @@ return array(
                     ),
                 ),
             ),
+            'head' => [
+                'type'    => 'Segment',
+                'options' => [
+                    'route'    => '/head[/:action[/:id]]',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id' => '[0-9]*'
+                    ],
+                    'defaults' => [
+                        'controller'    => '\Application\Controller\HeadController',
+                        'action'        => 'index',
+                    ],
+                ],
+            ],
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -73,7 +87,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Head' => 'Application\Controller\HeadController',
         ),
     ),
     'view_manager' => array(
@@ -92,6 +107,20 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
+    'doctrine' => [
+        'driver' => [
+            __NAMESPACE__ . '_driver' => [
+                'class' => \Doctrine\ORM\Mapping\Driver\AnnotationDriver::class,
+                'cache' => 'array',
+                'paths' => [__DIR__ . '/../src/Application/Entity']
+            ],
+            'orm_default' => [
+                'drivers' => [
+                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
+                ]
+            ]
+        ]
+    ],
     // Placeholder for console routes
     'console' => array(
         'router' => array(
