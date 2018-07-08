@@ -9,9 +9,10 @@
 namespace Application\Controller;
 
 
+use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class HeadController
+class HeadController extends AbstractActionController
 {
 
     /**

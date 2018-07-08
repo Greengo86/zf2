@@ -20,20 +20,21 @@ return array(
                     ),
                 ),
             ),
-            'head' => [
+            'head' => array(
                 'type'    => 'Segment',
-                'options' => [
+                'options' => array(
                     'route'    => '/head[/:action[/:id]]',
-                    'constraints' => [
+                    'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id' => '[0-9]*'
-                    ],
-                    'defaults' => [
-                        'controller'    => '\Application\Controller\HeadController',
+                    ),
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller'    => 'Head',
                         'action'        => 'index',
-                    ],
-                ],
-            ],
+                    ),
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -107,20 +108,19 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
-    'doctrine' => [
-        'driver' => [
-            __NAMESPACE__ . '_driver' => [
-                'class' => \Doctrine\ORM\Mapping\Driver\AnnotationDriver::class,
-                'cache' => 'array',
-                'paths' => [__DIR__ . '/../src/Application/Entity']
-            ],
-            'orm_default' => [
-                'drivers' => [
+    'doctrine' => array(
+        'driver' => array(
+            __NAMESPACE__ . '_driver' => array(
+                'class' => '\Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'paths' => array(__DIR__ . '/../src/Application/Entity')
+            ),
+            'orm_default' => array(
+                'drivers' => array(
                     __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
-                ]
-            ]
-        ]
-    ],
+                )
+            )
+        )
+    ),
     // Placeholder for console routes
     'console' => array(
         'router' => array(
