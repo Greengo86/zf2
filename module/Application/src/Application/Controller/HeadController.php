@@ -9,6 +9,8 @@
 namespace Application\Controller;
 
 
+use Application\Entity\Currency;
+
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -28,6 +30,7 @@ class HeadController extends AbstractActionController
 
         if(file_exists($xml_file)){
             $xml = simplexml_load_file($xml_file);
+            $objectManager = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
         }else{
             throw new \Exception('Not Find Xml file');
         }
@@ -43,7 +46,13 @@ class HeadController extends AbstractActionController
 
         foreach ($currency as $cur){
 //            var_dump($cur['@attributes']);
-            $this->currencyManager->addNewCurrency($cur['@attributes']);
+            $currencies = new Currency();
+            $currencies->setVal($cur['@attributes']['id']);
+            $currencies->setRate($cur['@attributes']['rate']);
+
+            $objectManager->persist($currencies);
+            $objectManager->flush();
+//            $this->currencyManager->addNewCurrency($cur['@attributes']);
         }
 
 
@@ -51,7 +60,7 @@ class HeadController extends AbstractActionController
 //        var_dump($category);
         foreach ($category as $cat){
 //            var_dump($cat);
-            $this->categoryManager->addNewCategory($cat);
+//            $this->categoryManager->addNewCategory($cat);
         }
 
 
@@ -59,7 +68,7 @@ class HeadController extends AbstractActionController
 //        var_dump($offer);
         foreach ($offer as $of){
 //            var_dump($of);
-            $this->offerManager->addNewOffer($of);
+//            $this->offerManager->addNewOffer($of);
         }
         return new ViewModel(['data' => $data]);
 

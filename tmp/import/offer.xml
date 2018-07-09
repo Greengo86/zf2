@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<catalog>
+    <shop>
+        <currencies>
+            <currency id="RUB" rate="1.00"/>
+            <currency id="USD" rate="57.68"/>
+        </currencies>
+        <categories>
+            <category id="1">Компьютеры, комплектующие, периферия</category>
+            <category id="2" parentId="1">Мониторы</category>
+            <category id="3" parentId="1">Компьютеры</category>
+            <category id="4" parentId="1">Жесткие диски и SSD</category>
+            <category id="5">Мебель, товары для офиса</category>
+            <category id="6" parentId="5">Кресла и стулья</category>
+            <category id="7" parentId="5">Офисная техника</category>
+            <category id="8">Бытовая техника для дома и кухни</category>
+            <category id="9" parentId="8">Крупная бытовая техника</category>
+            <category id="10" parentId="9">Холодильники</category>
+            <category id="11" parentId="9">Стиральные машины</category>
+            <category id="12" parentId="8">Мелкая бытовая техника</category>
+            <category id="13" parentId="12">Микроволновые печи</category>
+            <category id="14" parentId="12">Чайники электрические</category>
+        </categories>
+        <offers>
+            <offer id="1">
+                <name>Монитор ЖК VIEWSONIC VA1903a 18.5", черный</name>
+                <description>размер экрана: 18.5", широкоформатная матрица TN с разрешением 1366×768, отношением сторон 16:9, яркостью 200кд/м2, временем отклика 5мс, разъем D-SUB (VGA)</description>
+                <picture>http://example.com</picture>
+                <categoryId>2</categoryId>
+                <price>4150.00</price>
+                <modified_datetime>2017-02-17T16:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>VIEWSONIC</brand_name>
+            </offer>
+            <offer id="2">
+                <name>Монитор ЖК VIEWSONIC VA2261-2 21.5", черный [vs16217]</name>
+                <description>размер экрана: 21.5", широкоформатная матрица TN с разрешением 1920×1080, отношением сторон 16:9, яркостью 200кд/м2, временем отклика 5мс, разъем D-SUB (VGA), DVI</description>
+                <picture>http://example.com</picture>
+                <categoryId>2</categoryId>
+                <price>53.00</price>
+                <modified_datetime>2017-02-17T16:43:21</modified_datetime>
+                <currencyId>USD</currencyId>
+                <brand_name>VIEWSONIC</brand_name>
+            </offer>
+            <offer id="3">
+                <name>Монитор ЖК DELL E2016HV 19.5"</name>
+                <description>размер экрана: 19.5", широкоформатная матрица TN с разрешением 1600×900, отношением сторон 16:9, яркостью 200кд/м2, временем отклика 5мс, разъем D-SUB (VGA)</description>
+                <picture>http://example.com</picture>
+                <categoryId>2</categoryId>
+                <price>4500.00</price>
+                <modified_datetime>2017-02-17T16:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>DELL</brand_name>
+            </offer>
+            <offer id="4">
+                <name>Компьютер HP 260-a102ur</name>
+                <description>процессор: AMD E2 7110; частота процессора: 1.8 ГГц; оперативная память: SO-DIMM, DDR3L 4096 Мб 1600 МГц; видеокарта: AMD Radeon R2; HDD: 500 Гб, 7200 об/мин; DVD-RW; Wi-Fi; Bluetooth</description>
+                <picture>http://example.com</picture>
+                <categoryId>3</categoryId>
+                <price>23053.00</price>
+                <modified_datetime>2017-02-18T16:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>HP</brand_name>
+            </offer>
+            <offer id="5">
+                <name>Компьютер DELL Optiplex 3050</name>
+                <description>процессор: Intel Pentium G4560; частота процессора: 3.5 ГГц; оперативная память: DIMM, DDR4 4096 Мб 2400 МГц; видеокарта: Intel HD Graphics 610; HDD: 500 Гб, 7200 об/мин; DVD-RW</description>
+                <picture>http://example.com</picture>
+                <categoryId>3</categoryId>
+                <price>25053.00</price>
+                <modified_datetime>2017-02-18T16:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>DELL</brand_name>
+            </offer>
+            <offer id="6">
+                <name>Жесткий диск TOSHIBA P300 HDWD105UZSVA</name>
+                <description>форм-фактор 3.5"; тип: HDD; интерфейс: SATA III; объём: 500Гб; скорость вращения шпинделя 7200об/мин; буферная память 64Мб</description>
+                <picture>http://example.com</picture>
+                <categoryId>4</categoryId>
+                <price>4000.00</price>
+                <modified_datetime>2017-02-21T16:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>TOSHIBA</brand_name>
+            </offer>
+            <offer id="7">
+                <name>Жесткий диск TOSHIBA DT01ACA050</name>
+                <description>форм-фактор 3.5"; тип: HDD; интерфейс: SATA III; объём: 500Гб; скорость вращения шпинделя 7200об/мин; буферная память 32Мб</description>
+                <picture>http://example.com</picture>
+                <categoryId>4</categoryId>
+                <price>4100.00</price>
+                <modified_datetime>2017-02-21T16:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>TOSHIBA</brand_name>
+            </offer>
+            <offer id="8">
+                <name>Кресло игровое AEROCOOL AC80C-BR</name>
+                <description>тип установки: на колесиках; подлокотники; эргономичная спинка (сетка); газлифт; ограничение по весу: 150кг; материал обивки: кожа</description>
+                <picture>http://example.com</picture>
+                <categoryId>6</categoryId>
+                <price>49.00</price>
+                <modified_datetime>2017-02-20T18:43:21</modified_datetime>
+                <currencyId>USD</currencyId>
+                <brand_name>AEROCOOL</brand_name>
+            </offer>
+            <offer id="9">
+                <name>Кресло игровое AEROCOOL AC220-B</name>
+                <description>тип установки: на колесиках; подлокотники; подголовник; эргономичная спинка (сетка); газлифт; регулировка высоты подлокотников; ограничение по весу: 150кг; материал обивки: искусственная кожа</description>
+                <picture>http://example.com</picture>
+                <categoryId>6</categoryId>
+                <price>50.00</price>
+                <modified_datetime>2017-02-20T18:43:21</modified_datetime>
+                <currencyId>USD</currencyId>
+                <brand_name>AEROCOOL</brand_name>
+            </offer>
+            <offer id="10">
+                <name>Уничтожитель бумаг HAMA Home S7</name>
+                <description>одновременная загрузка, листов 7; резка на ленты; объем корзины 10л; класс секретности: уровень 1; автостарт</description>
+                <picture>http://example.com</picture>
+                <categoryId>7</categoryId>
+                <price>12000.00</price>
+                <modified_datetime>2017-02-20T18:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>HAMA</brand_name>
+            </offer>
+            <offer id="11">
+                <name>Холодильник SAMSUNG RT22HAR4DSA</name>
+                <description>количество камер: двухкамерный; расположение морозильной камеры- сверху, размораживание морозильной камеры- No Frost, общий объем 243л, объем холодильной камеры 183л, объем морозильной камеры 60л, зона свежести, цвет: серебристый</description>
+                <picture>http://example.com</picture>
+                <categoryId>10</categoryId>
+                <price>32000.00</price>
+                <modified_datetime>2017-08-14T18:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>SAMSUNG</brand_name>
+            </offer>
+            <offer id="12">
+                <name>Стиральная машина BOSCH WLG20061OE</name>
+                <description>тип загрузки: фронтальная, максимальная загрузка: 5кг, отжим: 1000об/мин, класс стирки: A, класс отжима: C, защита от протечек, цвет: белый</description>
+                <picture>http://example.com</picture>
+                <categoryId>11</categoryId>
+                <price>24000.00</price>
+                <modified_datetime>2017-08-14T18:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>BOSCH</brand_name>
+            </offer>
+            <offer id="13">
+                <name>Стиральная машина BOSCH WLG20060OE</name>
+                <description>тип загрузки: фронтальная, максимальная загрузка: 5кг, отжим: 1000об/мин, класс стирки: A, класс отжима: C, защита от протечек, цвет: белый</description>
+                <picture>http://example.com</picture>
+                <categoryId>11</categoryId>
+                <price>22000.00</price>
+                <modified_datetime>2017-08-14T18:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>BOSCH</brand_name>
+            </offer>
+            <offer id="14">
+                <name>Микроволновая печь BOSCH HMT72M420R</name>
+                <description>мощность 800Вт, объем 17л, цвет- белый</description>
+                <picture>http://example.com</picture>
+                <categoryId>13</categoryId>
+                <price>7000.00</price>
+                <modified_datetime>2017-08-14T18:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>BOSCH</brand_name>
+            </offer>
+            <offer id="15">
+                <name>Микроволновая печь SAMSUNG ME713KR</name>
+                <description>мощность 800Вт, объем 20л, внутреннее покрытие- керамическая эмаль, цвет- белый</description>
+                <picture>http://example.com</picture>
+                <categoryId>13</categoryId>
+                <price>5000.00</price>
+                <modified_datetime>2017-08-14T18:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>SAMSUNG</brand_name>
+            </offer>
+            <offer id="16">
+                <name>Чайник электрический BOSCH TWK7607</name>
+                <description>мощность — 2200Вт; объем — 1.7л; корпус — пластик; фильтр от накипи, цвет — кремовый</description>
+                <picture>http://example.com</picture>
+                <categoryId>14</categoryId>
+                <price>5000.00</price>
+                <modified_datetime>2017-08-14T18:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>BOSCH</brand_name>
+            </offer>
+            <offer id="17">
+                <name>Чайник электрический BOSCH TWK7604</name>
+                <description>мощность — 2200Вт; объем — 1.7л; корпус — пластик; фильтр от накипи, цвет — кремовый</description>
+                <picture>http://example.com</picture>
+                <categoryId>14</categoryId>
+                <price>1650.00</price>
+                <modified_datetime>2017-08-14T18:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>BOSCH</brand_name>
+            </offer>
+            <offer id="18">
+                <name>Чайник электрический PHILIPS HD4646/00</name>
+                <description>мощность — 2400Вт; объем — 1.5л; корпус — пластик; фильтр от накипи, цвет — белый</description>
+                <picture>http://example.com</picture>
+                <categoryId>14</categoryId>
+                <price>15.00</price>
+                <modified_datetime>2017-08-14T18:43:21</modified_datetime>
+                <currencyId>USD</currencyId>
+                <brand_name>PHILIPS</brand_name>
+            </offer>
+            <offer id="19">
+                <name>Чайник электрический PHILIPS HD4646/20</name>
+                <description>мощность — 2400Вт; объем — 1.5л; корпус — пластик; фильтр от накипи, цвет — черный</description>
+                <picture>http://example.com</picture>
+                <categoryId>14</categoryId>
+                <price>1550.00</price>
+                <modified_datetime>2017-08-14T18:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>PHILIPS</brand_name>
+            </offer>
+            <offer id="20">
+                <name>Монитор ЖК SAMSUNG S22D300NY "R", 21.5"</name>
+                <description>размер экрана: 21.5", широкоформатная матрица TN+film с разрешением 1920×1080, отношением сторон 16:9, яркостью 200кд/м2, временем отклика 5мс, разъем D-SUB (VGA)</description>
+                <picture>http://example.com</picture>
+                <categoryId>2</categoryId>
+                <price>6150.00</price>
+                <modified_datetime>2017-02-17T16:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>SAMSUNG</brand_name>
+            </offer>
+            <offer id="21">
+                <name>Монитор ЖК PHILIPS 193V5LSB2 (10/62) 18.5"</name>
+                <description>размер экрана: 18.5", широкоформатная матрица TN+film с разрешением 1366×768, отношением сторон 16:9, яркостью 200кд/м2, временем отклика 5мс, разъем D-SUB (VGA)</description>
+                <picture>http://example.com</picture>
+                <categoryId>2</categoryId>
+                <price>4150.00</price>
+                <modified_datetime>2017-02-17T16:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>PHILIPS</brand_name>
+            </offer>
+            <offer id="22">
+                <name>SSD накопитель SAMSUNG 850 EVO MZ-75E250BW 250Гб</name>
+                <description>скорость чтения, до: 540Мб/с; скорость записи, до: 520Мб/с; толщина — 6.8мм; интерфейс: SATA III; форм-фактор: 2.5"; TBW: 75 ТБ</description>
+                <picture>http://example.com</picture>
+                <categoryId>4</categoryId>
+                <price>6240.00</price>
+                <modified_datetime>2017-02-21T16:43:21</modified_datetime>
+                <currencyId>RUB</currencyId>
+                <brand_name>SAMSUNG</brand_name>
+            </offer>
+            <offer id="23">
+                <name>unknown</name>
+                <description>unknown</description>
+                <picture>http://example.com</picture>
+                <categoryId>40</categoryId>
+                <price>6240.00</price>
+                <modified_datetime>2017-02-21T16:43:21</modified_datetime>
+                <brand_name>SAMSUNG</brand_name>
+            </offer>
+            <offer id="24">
+                <name>unknown</name>
+                <description>unknown</description>
+                <picture>http://example.com</picture>
+                <categoryId>40</categoryId>
+                <price>6240.00</price>
+                <modified_datetime>2017-02-21T16:43:21</modified_datetime>
+                <brand_name>PHILIPS</brand_name>
+            </offer>
+        </offers>
+    </shop>
+</catalog>
