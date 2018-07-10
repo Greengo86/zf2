@@ -121,13 +121,13 @@ return array(
     ),
     'doctrine' => array(
         'driver' => array(
-            __NAMESPACE__ . '_driver' => array(
+            'Application_entity' => array(
                 'class' => '\Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'paths' => array(__DIR__ . '/../src/Application/Entity')
             ),
             'orm_default' => array(
                 'drivers' => array(
-                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
+                    'Application\Entity' => 'Application_entity',
                 )
             )
         )

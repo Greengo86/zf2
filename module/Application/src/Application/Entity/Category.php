@@ -32,8 +32,8 @@ class Category
     protected $parent_id;
 
 
-    //Записываем номер категории.
-    public function setVal($category_name)
+    //Записываем название категории.
+    public function setCategory($category_name)
     {
         $this->category_name = $category_name;
     }

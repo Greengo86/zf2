@@ -9,8 +9,10 @@
 namespace Application\Controller;
 
 
+use Application\Entity\Category;
 use Application\Entity\Currency;
 
+use Application\Entity\Offer;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -26,7 +28,6 @@ class HeadController extends AbstractActionController
 
         $xml_file = 'tmp/import/offer.xml';
 
-//        var_dump($xml_file);
 
         if(file_exists($xml_file)){
             $xml = simplexml_load_file($xml_file);
@@ -35,7 +36,6 @@ class HeadController extends AbstractActionController
             throw new \Exception('Not Find Xml file');
         }
 
-//        var_dump($xml);
 
         $json = json_encode($xml);
         $data = json_decode($json,TRUE);
@@ -50,16 +50,21 @@ class HeadController extends AbstractActionController
             $currencies->setVal($cur['@attributes']['id']);
             $currencies->setRate($cur['@attributes']['rate']);
 
-            $objectManager->persist($currencies);
-            $objectManager->flush();
+//            $objectManager->persist($currencies);
+//            $objectManager->flush();
 //            $this->currencyManager->addNewCurrency($cur['@attributes']);
         }
 
 
         $category = $data['shop']['categories']['category'];
-//        var_dump($category);
+
         foreach ($category as $cat){
 //            var_dump($cat);
+            $categories = new Category();
+            $categories->setCategory($cat);
+
+//            $objectManager->persist($categories);
+//            $objectManager->flush();
 //            $this->categoryManager->addNewCategory($cat);
         }
 
@@ -68,6 +73,23 @@ class HeadController extends AbstractActionController
 //        var_dump($offer);
         foreach ($offer as $of){
 //            var_dump($of);
+            $offers = new Offer();
+            $offers->setName($of['name']);
+            $offers->setDescription($of['description']);
+            $offers->setPicture($of['picture']);
+            $offers->setCategoryId($of['categoryId']);
+            $offers->setPrice($of['price']);
+            $offers->setModified_datetime($of['modified_datetime']);
+
+            if($of['currencyId'] == null) {
+                $offers->setCurrencyId('RUB');
+            }
+
+            $offers->setCurrencyId($of['currencyId']);
+            $offers->setBrand_name($of['brand_name']);
+
+//            $objectManager->persist($offers);
+//            $objectManager->flush();
 //            $this->offerManager->addNewOffer($of);
         }
         return new ViewModel(['data' => $data]);
