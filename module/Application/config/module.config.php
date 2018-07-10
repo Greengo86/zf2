@@ -46,6 +46,32 @@ return array(
                     ),
                 ),
             ),
+            'showcase' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/showcase',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller'    => 'Showcase',
+                        'action'        => 'Index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
+                    ),
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -101,6 +127,7 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'Application\Controller\Head' => 'Application\Controller\HeadController',
+            'Application\Controller\Showcase' => 'Application\Controller\ShowcaseController',
         ),
     ),
     'view_manager' => array(
