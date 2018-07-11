@@ -47,9 +47,9 @@ return array(
                 ),
             ),
             'showcase' => array(
-                'type'    => 'Literal',
+                'type'    => 'Segment',
                 'options' => array(
-                    'route'    => '/showcase',
+                    'route'    => '/showcase[/][:action][/:id]',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Application\Controller',
                         'controller'    => 'Showcase',

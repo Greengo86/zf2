@@ -1,14 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wsadmin
- * Date: 10.07.2018
- * Time: 15:59
- */
 
 namespace Application\Controller;
 
 
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -22,9 +17,36 @@ class ShowcaseController extends AbstractActionController
 
         $offers = $objectManager->getRepository('\Application\Entity\Offer');
 
-        $view = new ViewModel(array('offers' => $offers));
+        $page = new Paginator($offers, $fetchJoinCollection = true);
+
+        $view = new ViewModel(array('page' => $page));
 
         return $view;
+    }
+
+    public function viewAction()
+    {
+
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if (!$id && $id == 0) {
+            throw new \Exception('Wrong id parametr :(');
+            return new ViewModel();
+        }
+
+        $objectManager = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+
+        $offer = $objectManager->getRepository('\Application\Entity\Offer')->findOneBy(array('id' => $id));
+
+        if(!$offer){
+            throw new \Exception('Oops - Something Error :(');
+            return new ViewModel();
+        }
+
+        $view = new ViewModel(array('offer' => $offer));
+
+        return $view;
+
+
     }
 
 }
