@@ -84,7 +84,7 @@ class HeadController extends AbstractActionController
 
 //            $objectManager->persist($offers);
 //            $objectManager->flush();
-//            $this->offerManager->addNewOffer($of);
+
         }
         return new ViewModel(['data' => $data]);
 

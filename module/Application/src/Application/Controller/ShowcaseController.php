@@ -19,7 +19,13 @@ class ShowcaseController extends AbstractActionController
 
         $page = new Paginator($offers, $fetchJoinCollection = true);
 
+        //        $c = count($page);
+        foreach ($page as $post) {
+            echo $post->getHeadline() . "\n";
+        }
+
         $view = new ViewModel(array('page' => $page));
+
 
         return $view;
     }
