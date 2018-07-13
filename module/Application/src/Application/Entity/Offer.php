@@ -3,6 +3,11 @@
 namespace Application\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\Sql\Select;
+use Zend\Db\TableGateway\TableGatewayInterface;
+use Zend\Paginator\Adapter\DbSelect;
+use Zend\Paginator\Paginator;
 
 /**
  * Class Offer - представляет товар
@@ -11,61 +16,69 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Offer
 {
+
+    private $tableGateway;
+
+//    public function __construct(TableGatewayInterface $tableGateway)
+//    {
+//        $this->tableGateway = $tableGateway;
+//    }
+
     /**
      * @var int
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    public $id;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=255, nullable=false)
      */
-    protected $name;
+    public $name;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=255, nullable=false)
      */
-    protected $description;
+    public $description;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=255, nullable=false)
      */
-    protected $picture;
+    public $picture;
 
     /**
      * @var string
      * @ORM\Column(type="integer", length=50, nullable=false)
      */
-    protected $categoryId;
+    public $categoryId;
 
     /**
      * @var int
      * @ORM\Column(type="integer", length=10, nullable=false)
      */
-    protected $price;
+    public $price;
 
     /**
      * @var int
      * @ORM\Column(type="integer", length=10, nullable=false)
      */
-    protected $modified_datetime;
+    public $modified_datetime;
 
     /**
-     * @var int
-     * @ORM\Column(type="integer", length=10, nullable=false)
+     * @var string
+     * @ORM\Column(type="string", length=10, nullable=false)
      */
-    protected $currencyId;
+    public $currencyId;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100, nullable=false)
      */
-    protected $brand_name;
+    public $brand_name;
 
 
     //Записываем имя товара.
@@ -120,6 +133,39 @@ class Offer
         $this->brand_name = $brand_name;
     }
 
+    public function fetchAll($paginated = false)
+    {
+        if ($paginated) {
+            return $this->fetchPaginateResults();
+        }
 
+        return $this->tableGateway->select();
+    }
+
+    /**
+     * @return string
+     */
+    public function fetchPaginateResults()
+    {
+
+        $select = new Select($this->tableGateway->getTable());
+
+        $resultSetPrototype = new ResultSet();
+        $resultSetPrototype->setArrayObjectPrototype(new Offer());
+
+        // Create a new pagination adapter object:
+        $paginatorAdapter = new DbSelect(
+        // our configured select object:
+            $select,
+            // the adapter to run it against:
+            $this->tableGateway->getAdapter(),
+            // the result set to hydrate:
+            $resultSetPrototype
+        );
+
+        $paginator = new Paginator($paginatorAdapter);
+        return $paginator;
+
+    }
 
 }

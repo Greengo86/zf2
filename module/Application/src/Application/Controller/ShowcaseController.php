@@ -3,9 +3,11 @@
 namespace Application\Controller;
 
 
+use Application\Entity\Offer;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\Paginator\Adapter\ArrayAdapter;
 use Zend\Paginator\Paginator;
 use Zend\View\Model\ViewModel;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
@@ -21,22 +23,31 @@ class ShowcaseController extends AbstractActionController
         $objectManager = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
 
 //        $offers = $objectManager->getRepository('\Application\Entity\Offer');
-        $q = $objectManager->createQuery('SELECT * from offer');
+//        $q = $objectManager->createQuery('SELECT * from \Application\Entity\Offer');
+
+//        $posts = $objectManager ->getRepository('\Application\Entity\Offer')->findAll();
+        $posts = $objectManager ->getRepository('\Application\Entity\Offer')->findAll();
 
 
-        $pagi = new Paginator(new DoctrinePaginator(new ORMPaginator($q)));
+//        var_dump($posts);
 
+        $pagi = new Paginator(new ArrayAdapter($posts));
 
-        var_dump($pagi);
+        $pagi->setCurrentPageNumber((int) $this->params()->fromQuery('page', 1));
+        $pagi->setPageRange(5);
+//        $pagi->setItemCountPerPage(10);
+
+//        var_dump($pagi);
         //        $c = count($page);
 //        foreach ($page as $post) {
 //            echo $post->getHeadline() . "\n";
 ////        }
-//        $page1->setCurrentPageNumber(1);
+
 //        $page1->setItemCountPerPage(10);
 
-        $view = new ViewModel(array('page' => $pagi));
+        $view = new ViewModel;
 
+        $view->setVariable('pagi', $pagi);
 
         return $view;
     }
