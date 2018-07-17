@@ -30,6 +30,11 @@ class Currency
      */
     public $rate;
 
+    /**
+     * @ORM\OneToOne(targetEntity="Offer", mappedBy="currency")
+     */
+    public $offer;
+
 
     /**
      * Set val for this currency
