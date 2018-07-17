@@ -16,19 +16,19 @@ class Currency
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    public $id;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=20, nullable=false)
      */
-    protected $val;
+    public $val;
 
     /**
      * @var int
      * @ORM\Column(type="integer", length=10, nullable=false)
      */
-    protected $rate;
+    public $rate;
 
 
     /**

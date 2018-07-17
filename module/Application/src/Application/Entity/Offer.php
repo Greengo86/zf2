@@ -5,6 +5,7 @@ namespace Application\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\Sql\Select;
+use Doctrine\ORM\Mapping\OneToOne as OneToOne;
 use Zend\Db\TableGateway\TableGatewayInterface;
 use Zend\Paginator\Adapter\DbSelect;
 use Zend\Paginator\Paginator;
@@ -51,7 +52,7 @@ class Offer
     public $picture;
 
     /**
-     * @var string
+     * @var int
      * @ORM\Column(type="integer", length=50, nullable=false)
      */
     public $categoryId;
@@ -80,6 +81,11 @@ class Offer
      */
     public $brand_name;
 
+    /**
+     * One Offer has One Currency.
+     * @ORM\JoinColumn(name="val", referencedColumnName="currencyId")
+     */
+    public $currency;
 
     //Записываем имя товара.
     public function setName($name)

@@ -2,15 +2,31 @@
 
 var_dump($offer); ?>
 
-<ul>
-    <?php
-    foreach($this->offer as $post) {
-        print '<li>
-            <a href="' . $this->url('blog', array('action'=>'view', 'id' => $post['id'])) . '">' . $post['title'] . '</a>
-            [' . date('d.m.Y H:i', $post['created']). '],
-            <a href="' . $this->url('blog', array('action'=>'edit', 'id' => $post['id'])) . '">edit</a>,
-            <a href="' . $this->url('blog', array('action'=>'delete', 'id' => $post['id'])) . '">delete</a>
-            </li>';
-    }
-    ?>
-</ul>
+<!--<table class="table">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>id</th>-->
+<!--        <th>name</th>-->
+<!--        <th>description</th>-->
+<!--        <th>price</th>-->
+<!--        <th>picture</th>-->
+<!--        <th>categoreId</th>-->
+<!--        <th>modified_datetime</th>-->
+<!--        <th>currencyId</th>-->
+<!--        <th>brand_name</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--        <tr>-->
+<!--            <td>--><?php //echo $offer->id; ?><!--</td>-->
+<!--            <td>--><?php //echo $offer->name; ?><!--</td>-->
+<!--            <td>--><?php //echo $offer->description; ?><!--</td>-->
+<!--            <td>--><?php //echo $offer->price; ?><!--</td>-->
+<!--            <td>--><?php //echo $offer->picture; ?><!--</td>-->
+<!--            <td>--><?php //echo $offer->categoreId; ?><!--</td>-->
+<!--            <td>--><?php //echo $offer->modified_datetime; ?><!--</td>-->
+<!--            <td>--><?php //echo $offer->currencyId; ?><!--</td>-->
+<!--            <td>--><?php //echo $offer->brand_name; ?><!--</td>-->
+<!--        </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
