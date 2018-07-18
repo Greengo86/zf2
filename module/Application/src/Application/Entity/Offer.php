@@ -82,11 +82,10 @@ class Offer
     public $brand_name;
 
     /**
-     * @var string
      *
      * One Offer has One Currency.
      * @ORM\OneToOne(targetEntity="Currency", inversedBy="offer")
-     * @ORM\JoinColumn(name="currencyId", referencedColumnName="val")
+     * @ORM\JoinColumn(name="currencyId", referencedColumnName="id")
      */
     public $currency;
 
